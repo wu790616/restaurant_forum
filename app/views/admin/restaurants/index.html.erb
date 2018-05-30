@@ -7,6 +7,7 @@
     <thead>
       <tr class="info">
         <th>Name</th>
+        <th>Category</th>
         <th>#</th>
         <th>#</th>
         <th>#</th>
@@ -16,7 +17,8 @@
     <tbody>
       <% @restaurants.each do |restaurant| %>
       <tr>
-        <th><%= restaurant.name %></th>
+        <th scope="row"><%= restaurant.name %></td>
+        <td>[<%= restaurant.category.name %>]</td>
         <td><%= link_to 'Show', admin_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Delete', admin_restaurant_path(restaurant), method: :delete, data:{confirm: "Are you sure?"} %></td>
