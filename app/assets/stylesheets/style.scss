@@ -1,3 +1,9 @@
+.thumbnail p, .thumbnail h3 {
+  white-space: nowrap; //不進行換行
+  text-overflow: ellipsis; //顯示省略符號
+  overflow: hidden;
+}
+
 p.image-container {
   width: 100%;
   height: 0;
@@ -7,6 +13,16 @@ p.image-container {
 
 p.image-container img {
   width: 100%;
+}
+
+p.noimage-container {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 65%;
+  background-color: #D3D3D3;
+  text-align:center;
+  font-size: xx-large;
 }
 
 .nav-pills-center {
