@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-4">
+      <%= image_tag @user.avatar, class: "img-responsive" %>
+    </div>
+    
+    <div class="col-md-7">
+      <ul>
+        <li><h1><%= @user.name %></h1></li>
+        <li><%= @user.email %></li>
+        <li><%= @user.intro %></li>
+        <li><%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-default" %></li>
+      </ul>
+    </div>
+  
+  </div>
+</div>
