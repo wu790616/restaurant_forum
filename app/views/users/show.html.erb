@@ -28,6 +28,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">已評論餐廳</div>
         <div class="panel-body">
+          <% @commented_restaurants = @commented_restaurants.uniq %>
           <% @commented_restaurants.each do |restaurant| %>
             <div class="my-restaurant">
               <%= image_tag restaurant.image, class: "img img-responsive" %>
