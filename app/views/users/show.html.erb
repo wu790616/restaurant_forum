@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    
-    <div class="col-md-3">
+    <br>
+    <div class="col-md-3 col-md-offset-1">
       <%= image_tag @user.avatar, class: "img-responsive" %>
     </div>
     
@@ -21,6 +21,21 @@
         </li>
         <li class="list-group-item"><%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %></li>
       </ul>
+    </div>
+    
+    <div class="col-md-10 col-md-offset-1">
+      <br>
+      <div class="panel panel-default">
+        <div class="panel-heading">已評論餐廳</div>
+        <div class="panel-body">
+          <% @commented_restaurants.each do |restaurant| %>
+            <div class="my-restaurant">
+              <%= image_tag restaurant.image, class: "img img-responsive" %>
+              <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>     
     </div>
   
   </div>

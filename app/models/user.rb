@@ -10,5 +10,6 @@ class User < ApplicationRecord
   end
 
   has_many :comments
+  has_many :restaurants, through: :comments
   
 end

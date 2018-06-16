@@ -33,3 +33,17 @@ p.noimage-container {
   float: none;
   display: inline-block;
 }
+
+.my-restaurant {
+  padding: 10px;
+  float:left
+}
+
+.my-restaurant img {
+  height: 100px;
+  border-radius: 10px;
+}
+
+.my-restaurant p {
+  text-align:center;
+}
