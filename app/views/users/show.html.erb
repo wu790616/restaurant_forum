@@ -8,15 +8,15 @@
     <div class="col-md-7 ">
       <ul class="list-group">
         <li class="list-group-item">
-          <span class="badge badge-primary badge-pill">Name</span>
-          <h1><%= @user.name %></h1>
+          <span class="badge badge-primary badge-pill">Name</span><br>
+          <h2><%= @user.name %></h2>
         </li>
         <li class="list-group-item">
-          <span class="badge badge-primary badge-pill">Email</span>
+          <span class="badge badge-primary badge-pill">Email</span><br>
           <%= @user.email %>    
         </li>
         <li class="list-group-item">
-          <span class="badge badge-primary badge-pill">Intro</span>
+          <span class="badge badge-primary badge-pill">Intro</span><br>
           <%= @user.intro %>
         </li>
         <li class="list-group-item"><%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %></li>
