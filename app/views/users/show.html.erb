@@ -30,10 +30,12 @@
         <div class="panel-body">
           <% @commented_restaurants = @commented_restaurants.uniq %>
           <% @commented_restaurants.each do |restaurant| %>
-            <div class="my-restaurant">
-              <%= image_tag restaurant.image, class: "img img-responsive" %>
-              <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
-            </div>
+            <%= link_to(restaurant_path(restaurant)) do %>
+              <div class="my-restaurant">
+                <%= image_tag restaurant.image, class: "img img-responsive" %>
+                <p><%= restaurant.name %></p>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>     
