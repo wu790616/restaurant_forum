@@ -19,7 +19,9 @@ namespace :dev do
 
   task fake_user: :environment do
     User.all.each do |user|
-      user.destroy unless user.admin?
+      if (user.email != "admin@test.com") and (user.email != "test@test.com")
+        user.destroy
+      end
     end
 
     20.times do |i|
