@@ -10,7 +10,7 @@ class User < ApplicationRecord
     self.role == "admin"
   end
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many :restaurants, through: :comments
   
 end
