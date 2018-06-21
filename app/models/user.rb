@@ -10,7 +10,12 @@ class User < ApplicationRecord
     self.role == "admin"
   end
 
+  # 使用者評論餐廳=>多對多關聯
   has_many :comments, dependent: :destroy
   has_many :restaurants, through: :comments
   
+  # 使用者收藏餐廳=>多對多關聯
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_restaurants, through: :favorites, source: :restaurant
+
 end
