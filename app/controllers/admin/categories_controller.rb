@@ -33,9 +33,13 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def destroy
-    @category.destroy
-    redirect_to admin_categories_path
-    flash[:alert] = "category was deleted"
+    if @category.destroy
+      redirect_to admin_categories_path
+      flash[:alert] = "category was deleted"
+    else
+      redirect_to admin_categories_path
+      flash[:alert] = @category.errors.full_messages
+    end
   end
 
   private
