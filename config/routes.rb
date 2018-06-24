@@ -15,6 +15,12 @@ Rails.application.routes.draw do
       get :dashboard
     end
 
+    #favorite/unfavorite
+    member do
+      post :favorite
+      post :unfavorite
+    end
+
   end
   
   resources :categories, only: :show
