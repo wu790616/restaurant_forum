@@ -12,6 +12,7 @@
         <p class="label label-default"><%= restaurant.category.name %></p>
         <p><%= truncate(restaurant.description) %></p>
       </div>
+      <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %>
     </div>
 
   </div>
