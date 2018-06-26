@@ -40,6 +40,8 @@
 
   <!-- favorite/unfavorite按鈕 -->
   <%= render partial: "shared/favorite", locals: {restaurant: @restaurant} %>
+  <%= link_to 'Like', like_restaurant_path(@restaurant), method: :post, class: "btn btn-primary" %>
+  <%= link_to 'Unlike', unlike_restaurant_path(@restaurant), method: :post, class: "btn btn-info" %>
 
   <hr>
   <!-- 顯示與餐廳相關的評論 -->
