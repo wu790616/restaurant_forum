@@ -21,4 +21,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_restaurants, through: :likes, source: :restaurant
 
+  # 使用者有很多追蹤紀錄(followships), 透過追蹤紀錄，一個User追蹤很多其他User(followings)
+  has_many :followships, dependent: :destroy
+  has_many :followings, through: :followships
+
 end
