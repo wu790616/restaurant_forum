@@ -6,10 +6,6 @@ class User < ApplicationRecord
   validates :name, presence: true
   mount_uploader :avatar, AvatarUploader
 
-  def admin?
-    self.role == "admin"
-  end
-
   # 使用者評論餐廳=>多對多關聯
   has_many :comments, dependent: :destroy
   has_many :restaurants, through: :comments
@@ -25,4 +21,11 @@ class User < ApplicationRecord
   has_many :followships, dependent: :destroy
   has_many :followings, through: :followships
 
+  def admin?
+    self.role == "admin"
+  end
+
+  def following?(user)
+    self.followings.include?(user)
+  end
 end
