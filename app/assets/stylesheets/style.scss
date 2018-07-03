@@ -25,6 +25,21 @@ p.noimage-container {
   font-size: xx-large;
 }
 
+.user_item {
+  margin-bottom: 15px;
+}
+
+.user_item img {
+  width: 128px;
+  height: 128px;
+}
+
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
 .nav-pills-center {
   text-align:center;
 }
