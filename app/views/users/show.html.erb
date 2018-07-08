@@ -81,7 +81,27 @@
           <% end %>
         </div>
       </div>
+    </div>
+    
+    <!-- 收藏的餐廳 -->
+    <div class="col-md-7">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= @favorited_restaurants.count %> 收藏的餐廳
+        </div>
+        <div class="panel-body">
+          <% @favorited_restaurants.each do |restaurant| %>
+            <%= link_to(restaurant_path(restaurant)) do %>
+              <div class="my-restaurant">
+                <%= image_tag restaurant.image, class: "img img-responsive" %>
+                <p><%= restaurant.name %></p>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
+    
   </div>
+
 </div>
