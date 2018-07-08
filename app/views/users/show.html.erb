@@ -31,7 +31,7 @@
         <div class="panel-heading">
           <%= @followings.count %> followings
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="max-height: 500px; overflow-y: scroll;">
           <% @followings.each do |following| %>
             <%= link_to(user_path(following)) do %>
               <div class="follow_list">
@@ -49,12 +49,12 @@
     <div class="col-md-7">
       <div class="panel panel-default">
         <div class="panel-heading">已評論餐廳</div>
-        <div class="panel-body">
+        <div class="panel-body" style="max-height: 500px; overflow-y: scroll;">
           <% @commented_restaurants = @commented_restaurants.uniq %>
           <% @commented_restaurants.each do |restaurant| %>
             <%= link_to(restaurant_path(restaurant)) do %>
               <div class="my-restaurant">
-                <%= image_tag restaurant.image, class: "img img-responsive" %>
+                <%= image_tag restaurant.image, class: "img img-thumbnail", alt: "尚未上傳圖片"  %>
                 <p><%= restaurant.name %></p>
               </div>
             <% end %>
@@ -69,7 +69,7 @@
         <div class="panel-heading">
           <%= @followers.count %> followers
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="max-height: 500px; overflow-y: scroll;">
           <% @followers.each do |follower| %>
             <%= link_to(user_path(follower)) do %>
               <div class="follow_list">
@@ -89,11 +89,11 @@
         <div class="panel-heading">
           <%= @favorited_restaurants.count %> 收藏的餐廳
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="max-height: 500px; overflow-y: scroll;">
           <% @favorited_restaurants.each do |restaurant| %>
             <%= link_to(restaurant_path(restaurant)) do %>
               <div class="my-restaurant">
-                <%= image_tag restaurant.image, class: "img img-responsive" %>
+                <%= image_tag restaurant.image, class: "img img-thumbnail", alt: "尚未上傳圖片" %>
                 <p><%= restaurant.name %></p>
               </div>
             <% end %>
@@ -101,7 +101,7 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 
 </div>
