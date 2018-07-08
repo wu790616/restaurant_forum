@@ -34,7 +34,7 @@
         <div class="panel-body">
           <% @followings.each do |following| %>
             <%= link_to(user_path(following)) do %>
-              <div class="following_list">
+              <div class="follow_list">
                 <%= image_tag following.avatar, class: "img-circle img-thumbnail", alt: "使用者未上傳圖片"  %>
                 <%= following.name %>
                 <hr>
@@ -62,6 +62,26 @@
         </div>
       </div>     
     </div>
-  
+
+    <!-- 追蹤自己的人 -->
+    <div class="col-md-3 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= @followers.count %> followers
+        </div>
+        <div class="panel-body">
+          <% @followers.each do |follower| %>
+            <%= link_to(user_path(follower)) do %>
+              <div class="follow_list">
+                <%= image_tag follower.avatar, class: "img-circle img-thumbnail", alt: "使用者未上傳圖片"  %>
+                <%= follower.name %>
+                <hr>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      </div>
+    </div>
   </div>
 </div>
