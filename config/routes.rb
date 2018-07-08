@@ -5,9 +5,13 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:index, :show] do
     resources :comments, only: [:create, :destroy]
 
-    #瀏覽所有餐廳的最新動態
+    
     collection do
+      #瀏覽所有餐廳的最新動態
       get :feeds
+
+      #top10 人氣餐廳
+      get :ranking
     end
 
     #瀏覽個別餐廳的dashboard
@@ -19,13 +23,11 @@ Rails.application.routes.draw do
     member do
       post :favorite
       post :unfavorite
-    end
-
-
-    member do
       post :like
       post :unlike
     end
+
+
   end
   
   resources :categories, only: :show
