@@ -22,9 +22,31 @@
         <li class="list-group-item"><%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %></li>
       </ul>
     </div>
+  </div>
+
+  <div class="row">
+    <!-- 自己去追蹤的人 -->
+    <div class="col-md-3 col-md-offset-1 ">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= @followings.count %> followings
+        </div>
+        <div class="panel-body">
+          <% @followings.each do |following| %>
+            <%= link_to(user_path(following)) do %>
+              <div class="following_list">
+                <%= image_tag following.avatar, class: "img-circle img-thumbnail", alt: "使用者未上傳圖片"  %>
+                <%= following.name %>
+                <hr>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
     
-    <div class="col-md-10 col-md-offset-1">
-      <br>
+    <!--已評論餐廳-->
+    <div class="col-md-7">
       <div class="panel panel-default">
         <div class="panel-heading">已評論餐廳</div>
         <div class="panel-body">
